@@ -29,14 +29,14 @@ public class Main {
 
         for (int i = 0; i < ListaPessoas.length;i++){
             if(ListaPessoas[i] != null){
-                System.out.println("\n"+ListaPessoas[i].getPrimeiroNome()+" "+ListaPessoas[i].getUltimoNome()+" "+ListaPessoas[i].getCargo()+" "+"Novo usuário cadastrado!" );
+                System.out.println("\n"+ListaPessoas[i].getCargo()+" "+ListaPessoas[i].getPrimeiroNome()+" "+ListaPessoas[i].getUltimoNome()+" "+"foi cadastrado!" );
                 gerenciamento.cadastraUsuario(ListaPessoas[i]);
             }
         }
 
-        System.out.println("\n"+ListaPapelada[0].getNumeroUnicoReferencia()+" "+ListaPapelada[0].getDataArquivamento()+" "+ListaPapelada[0].getInteressado()+
+        System.out.println("\n"+"O Documento com os seguintes dados foi cadastrado:"+" "+ListaPapelada[0].getNumeroUnicoReferencia()+" "+ListaPapelada[0].getDataArquivamento()+" "+ListaPapelada[0].getInteressado()+
                 " "+ListaPapelada[0].getTipoDeDocumento()+" "+ListaPapelada[0].getDescriçãoDocumento()+" "+ListaPapelada[0].getDescriçãoDocumento()+
-                " "+ListaPapelada[0].getTipoDeArmazenamento()+" "+ListaPapelada[0].getLocalCompletoDeArmazenamento()+" "+"Novo Documento cadastrado!" );
+                " "+ListaPapelada[0].getTipoDeArmazenamento()+" "+ListaPapelada[0].getLocalCompletoDeArmazenamento());
         gerenciamento.cadastraDocumento(ListaPapelada[0]);
 
 
