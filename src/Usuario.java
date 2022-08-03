@@ -3,12 +3,14 @@ public class Usuario {
     //atributos
     private String primeiroNome;
     private String ultimoNome;
+    private String CPF;
     private String cargo;
 
     //construtores
-    Usuario(String NovoPrimeiroNome, String NovoUltimoNome, String NovoCargo){
+    Usuario(String NovoPrimeiroNome, String NovoUltimoNome, String novoCPF, String NovoCargo){
         this.setPrimeiroNome(NovoPrimeiroNome);
         this.setUltimoNome(NovoUltimoNome);
+        this.setCPF(novoCPF);
         this.setCargo(NovoCargo);
     }
 
@@ -27,6 +29,14 @@ public class Usuario {
 
     public void setUltimoNome(String ultimoNome) {
         this.ultimoNome = ultimoNome;
+    }
+
+    public String getCPF() {
+        return CPF;
+    }
+
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
     }
 
     public String getCargo() {
