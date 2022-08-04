@@ -30,24 +30,27 @@ public class Main {
         for (int i = 0; i < ListaPessoas.length;i++){
             if(ListaPessoas[i] != null){
                 System.out.println("\n"+ListaPessoas[i].getCargo()+" "+ListaPessoas[i].getPrimeiroNome()+" "+ListaPessoas[i].getUltimoNome()+" "+ListaPessoas[i].getCPF()+" "+"foi cadastrado!" );
-                gerenciamento.cadastraUsuario(ListaPessoas[i]);
+                gerenciamento.cadastroUsuario(ListaPessoas[i]);
             }
         }
 
         System.out.println("\n"+"O Documento com os seguintes dados foi cadastrado:"+" "+ListaPapelada[0].getNumeroUnicoReferencia()+" "+ListaPapelada[0].getDataArquivamento()+" "+ListaPapelada[0].getInteressado()+
                 " "+ListaPapelada[0].getTipoDeDocumento()+" "+ListaPapelada[0].getDescriçãoDocumento()+" "+ListaPapelada[0].getDescriçãoDocumento()+
                 " "+ListaPapelada[0].getTipoDeArmazenamento()+" "+ListaPapelada[0].getLocalCompletoDeArmazenamento());
-        gerenciamento.cadastraDocumento(ListaPapelada[0]);
+        gerenciamento.cadastroDocumento(ListaPapelada[0]);
 
 
         gerenciamento.getConsultaUsuario("66677788899");
         gerenciamento.getConsultaDocumento("Professor");
-        gerenciamento.getRemoveUsuario("33344455566");
+        //gerenciamento.getRemoveUsuario("33344455566");
         gerenciamento.getConsultaUsuario("33344455566");
-        gerenciamento.getRemoveDocumento("13/05/1997");
+        //gerenciamento.getRemoveDocumento("13/05/1997");
         gerenciamento.getConsultaDocumento("Professor");
+        gerenciamento.getAlteraUsuario("33344455566", "Professor");
+        //gerenciamento.getConsultaUsuario("33344455566");
         //gerenciamento.getRemoveDocumento("024542");
         //gerenciamento.removeTodosUsuarios();
+        gerenciamento.getAlteraDataArquivamentoDocumento("024542", "03/08/2022");
 
 
 

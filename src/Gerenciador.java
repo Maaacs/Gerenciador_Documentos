@@ -6,13 +6,19 @@ public class Gerenciador {
     private ArrayList<Usuario> ListaUsuarios;
     private ArrayList<Documento> ListaDocumentos;
     private boolean cadastroUsuario;
-    private String removeUsuario;
-    private String consultaUsuario;
-    private Usuario alteraUsuario;
     private boolean cadastroDocumento;
+    private String removeUsuario;
     private String removeDocumento;
+    private String consultaUsuario;
     private String consultaDocumento;
-    private Documento alteraDocumento;
+    private Usuario alteraUsuario;
+
+    private Documento AlteraDataArquivamentoDocumento;
+    private Documento AlteraInteressadoDocumento;
+    private Documento AlteraTipoDeDocumento;
+    private Documento AlteraDescriçãoDocumento;
+    private Documento AlteratipoDeArmazenamentoDocumento;
+    private Documento AlteraLocalCompletoDeArmazenamentoDocumento;
 
 
     //construtor
@@ -21,11 +27,11 @@ public class Gerenciador {
         this.ListaDocumentos = new ArrayList<Documento>();
     }
 
-    public boolean cadastraUsuario(Usuario novoValor){
+    public boolean cadastroUsuario(Usuario novoValor){
         this.ListaUsuarios.add(novoValor);
         return true;
     }
-    public boolean cadastraDocumento(Documento novoValor){
+    public boolean cadastroDocumento(Documento novoValor){
         this.ListaDocumentos.add(novoValor);
         return true;
     }
@@ -94,26 +100,10 @@ public class Gerenciador {
         this.removeDocumento = removeDocumento;
     }
 
-    /*public Usuario getAlteraUsuario() {
-        return alteraUsuario;
-    }
-
-    public void setAlteraUsuario(Usuario alteraUsuario) {
-        this.alteraUsuario = alteraUsuario;
-    }
-
-    public boolean getRemoveDocumento() {
-        return removeDocumento;
-    }
-
-    public void setRemoveDocumento(boolean removeDocumento) {
-        this.removeDocumento = removeDocumento;
-    }*/
-
-    public Usuario getConsultaUsuario(String novoValor) {
+    public Usuario getConsultaUsuario(String novoCPF) {
         int size = ListaUsuarios.size();
         for(int i = 0; i < size; i++){
-            if(novoValor == ListaUsuarios.get(i).getCPF()){
+            if(novoCPF == ListaUsuarios.get(i).getCPF()){
                 System.out.println("\nUsuário"+" "+ ListaUsuarios.get(i).getPrimeiroNome()+" "+"Está presente!");
                 return this.ListaUsuarios.get(i);
             }
@@ -145,6 +135,87 @@ public class Gerenciador {
     public void setConsultaDocumento(String consultaDocumento) {
         this.consultaDocumento = consultaDocumento;
     }
+
+
+
+    public Usuario getAlteraUsuario(String NovoCPF, String NovoCargo) {
+        int size = ListaUsuarios.size();
+        for(int i = 0; i < size; i++){
+            if(NovoCPF == ListaUsuarios.get(i).getCPF()){
+                System.out.println("\nUsuário"+" "+ ListaUsuarios.get(i).getPrimeiroNome()+" "+"possui o cargo"+" "+ListaUsuarios.get(i).getCargo()+"!");
+                ListaUsuarios.get(i).setCargo(NovoCargo);
+                System.out.println("\nCargo alterado com sucesso!");
+                System.out.println("\nUsuário"+" "+ ListaUsuarios.get(i).getPrimeiroNome()+" "+"foi promovido a"+" "+ListaUsuarios.get(i).getCargo()+"!");
+                return this.ListaUsuarios.get(i);
+            }
+        }
+        System.out.println("\nUsuário não encontrado. Tente novamente!");
+        return null;
+    }
+
+
+
+    public Documento getAlteraDataArquivamentoDocumento(String NumeroUnicoReferencia, String NovoDataArquivamento) {
+        int size = ListaDocumentos.size();
+        if(size > 0){
+            for(int i = 0; i < size; i++) {
+                if (NumeroUnicoReferencia == ListaDocumentos.get(i).getNumeroUnicoReferencia()) {
+                    System.out.println("\nData de arquivamento do documento:"+" "+ListaDocumentos.get(i).getDataArquivamento());
+                    System.out.println("\nData alterada com sucesso!");
+                    ListaDocumentos.get(i).setDataArquivamento(NovoDataArquivamento);
+                    System.out.println("\nNova data de arquivamento do documento: "+ListaDocumentos.get(i).getDataArquivamento());
+                    return this.ListaDocumentos.get(i);
+                }
+
+            }
+        }
+        System.out.println("Documento não encontrado");
+        return null;
+    }
+
+   /* public void setAlteraDataArquivamentoDocumento(Documento alteraDataArquivamentoDocumento) {
+        AlteraDataArquivamentoDocumento = alteraDataArquivamentoDocumento;
+    }
+
+    public Documento getAlteraInteressadoDocumento() {
+        return AlteraInteressadoDocumento;
+    }
+
+    public void setAlteraInteressadoDocumento(Documento alteraInteressadoDocumento) {
+        AlteraInteressadoDocumento = alteraInteressadoDocumento;
+    }
+
+    public Documento getAlteraTipoDeDocumento() {
+        return AlteraTipoDeDocumento;
+    }
+
+    public void setAlteraTipoDeDocumento(Documento alteraTipoDeDocumento) {
+        AlteraTipoDeDocumento = alteraTipoDeDocumento;
+    }
+
+    public Documento getAlteraDescriçãoDocumento() {
+        return AlteraDescriçãoDocumento;
+    }
+
+    public void setAlteraDescriçãoDocumento(Documento alteraDescriçãoDocumento) {
+        AlteraDescriçãoDocumento = alteraDescriçãoDocumento;
+    }
+
+    public Documento getAlteratipoDeArmazenamentoDocumento() {
+        return AlteratipoDeArmazenamentoDocumento;
+    }
+
+    public void setAlteratipoDeArmazenamentoDocumento(Documento alteratipoDeArmazenamentoDocumento) {
+        AlteratipoDeArmazenamentoDocumento = alteratipoDeArmazenamentoDocumento;
+    }
+
+    public Documento getAlteraLocalCompletoDeArmazenamentoDocumento() {
+        return AlteraLocalCompletoDeArmazenamentoDocumento;
+    }
+
+    public void setAlteraLocalCompletoDeArmazenamentoDocumento(Documento alteraLocalCompletoDeArmazenamentoDocumento) {
+        AlteraLocalCompletoDeArmazenamentoDocumento = alteraLocalCompletoDeArmazenamentoDocumento;
+    }*/
 }
 
 
