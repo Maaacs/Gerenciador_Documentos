@@ -42,6 +42,13 @@ public class Main {
 
         gerenciamento.getConsultaUsuario("66677788899");
         gerenciamento.getConsultaDocumento("Professor");
+        gerenciamento.getRemoveUsuario("33344455566");
+        gerenciamento.getConsultaUsuario("33344455566");
+        gerenciamento.getRemoveDocumento("13/05/1997");
+        gerenciamento.getConsultaDocumento("Professor");
+        //gerenciamento.getRemoveDocumento("024542");
+        //gerenciamento.removeTodosUsuarios();
+
 
 
     }
